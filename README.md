@@ -65,3 +65,31 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # FridgeApp
+## 使い方
+### 非会員ユーザ
+食材の名前や料理名を入力することで、DBに登録されているレシピを検索できるようになっています。
+
+### 食品管理システム利用ユーザ
+右上のメモアイコンから買い物メモの利用、
+食材一覧ボタンから保管食材の確認、管理が利用できるようになっています。
+テストアカウント：
+メールアドレス->test@test.jp
+パスワード->testtest
+
+### レシピ投稿システム利用ユーザ
+右上のユーザアイコンからレシピを投稿できます。
+同ページから投稿レシピ、お気に入りレシピの確認ができ、
+投稿者がレシピページを確認した際にはページ下部からレシピの編集、削除ができます。
+テストアカウント：
+メールアドレス->test@test.jp
+パスワード->testtest
+
+## 環境
+MAMP/MySQL/PHP
+
+## データベース
+データベース名：FridgeApp.sql
+
+お使いのphpMyAdminに上のデータベースを作り、入っているFridgeApp.sqlをインポートしていただければお使いいただけるようになるかと思います。
+
+
