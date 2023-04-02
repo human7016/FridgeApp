@@ -1,5 +1,5 @@
 <?php
-
+// 保管食材に関するコントローラ
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

@@ -1,5 +1,5 @@
 <div id="screen" class="fixed-top d-none">
-  <!-- メモ -->
+  {{-- メモ表示状態 --}}
   <div id="memo" class="container position-fixed d-none">
     <!-- バツマーク -->
     <div class="d-flex flex-row-reverse">
@@ -82,23 +82,27 @@ $(function() {
     .done((res)=>{
 
       let data = `
-      <div class="mt-3 h5" id=`+ (res).id + `>
+      <div class="mt-3 h5" id="`+ (res).id +`">
       <div class="d-flex flex-row justify-content-between px-2" >
         <div class="col-8">
+          <!-- チェックボックス -->
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input check-IO" type="checkbox" name="check[]">
             <label class="form-check-label" for="flexCheckDefault">
-              ` + (res).food + `
+              `+(res).food+`
             </label>
           </div>
         </div>
         <div class="col-3">
           <div class="d-flex flex-row justify-content-evenly">
+            <!-- マイナスマーク -->
             <div><i class="fa-solid fa-square-caret-left sub-btn"></i></div>
-            <div class="purchase">` + (res).purchase + `個</div>
+            <div class="purchase">`+(res).purchase+`個</div>
+            <!-- プラスマーク -->
             <div><i class="fa-solid fa-square-caret-right add-btn"></i></div>
           </div>
         </div>
+        <!-- ゴミ箱 -->
         <div>
           <i class="fa-solid fa-trash-can memo-delete"></i>
         </div>

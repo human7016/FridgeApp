@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+{{--賞味期限入力ページ--}}
 <div class="text-center h1 mt-3">賞味期限を入力</div>
 
 <form action="memo_fridge" method="post">

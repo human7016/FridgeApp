@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<!-- フォーム -->
+{{-- レシピ投稿フォーム --}}
 <!-- 画像アップロード(https://migisanblog.com/laravel-image-upload-view/) -->
 <form method="post" action="recipe_confirm" enctype="multipart/form-data">
   <div class="text-center h4 mt-4">レシピ投稿</div>

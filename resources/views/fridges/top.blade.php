@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-
+{{--トップページ--}}
 @guest
 <div class="container-fluid px-0 d-flex justify-content-center">
   <div class="col-11 mt-3">

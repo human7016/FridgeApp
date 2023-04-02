@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- 料理名 -->
-<div class="container-fluid text-center h1 position-relative mt-4">
+<div class="container-fluid text-center h1 mt-4">
   {{$recipe->title}}
 </div>
 <!-- 画像 -->
@@ -10,17 +10,14 @@
   <image class="img-fluid img-height-1" src={{$recipe->image}}>
 </div>
 
-
-
   @auth
   <button type="button" id="pre-favorite" class="btn btn-outline-primary position-absolute end-0 px-0"><i class="fa-regular fa-star"></i>お気に入り登録</button>
   <button type="button" id="delete-favorite" class="btn btn-primary position-absolute end-0 px-0"><i class="fa-solid fa-star"></i>お気に入り解除</button>
   @endauth
 
-
-<!-- 食材 -->
+<!-- 材料 -->
 <div class="container-fluid text-center h1 mt-4">材料</div>
-<div class="container-fluid mb-4">
+<div class="container-fluid mb-4 h3">
   @foreach($foods as $food)
   <div class="row">
     <div class="col-6">
@@ -32,9 +29,10 @@
 
 <!-- レシピ -->
 <div class="container-fluid text-center h1">レシピ</div>
-<div class="container mb-4">{!!nl2br(htmlspecialchars($recipe->recipe))!!}</div>
+<div class="container mb-4 h3">{!!nl2br(htmlspecialchars($recipe->recipe))!!}</div>
 
 <!-- 編集、削除ボタン -->
+@auth
 @if($user->id == $recipe->user_id)
 <div class="container-fluid">
   <div class="d-flex flex-row justify-content-evenly">
@@ -51,6 +49,7 @@
   </div>
 </div>
 @endif
+@endauth
 
 <script>
 $(function(){

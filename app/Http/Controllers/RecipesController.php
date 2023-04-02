@@ -1,5 +1,5 @@
 <?php
-
+// レシピに関するコントローラ
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -114,11 +114,14 @@ class RecipesController extends Controller
     public function show(Request $request) {
         $user = Auth::user();
         $recipe = Recipe::where('id', $request->id)->first();
-        // $recipe->foods()->get() == $recipe->foods;
         $foods = $recipe->foods;
-        $favorite = Favorite::where('recipe_id', $request->id)
+        if(!empty($user->id)){
+            $favorite = Favorite::where('recipe_id', $request->id)
             ->where('user_id', $user->id)
             ->first();
+        } else {
+            $favorite = 0;
+        }
         return view('recipes/show', compact('user', 'recipe', 'foods', 'favorite'));
     }
     

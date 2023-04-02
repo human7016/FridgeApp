@@ -1,5 +1,7 @@
 @extends('layouts.layout')
-
+<?php 
+// dd($post_recipes);
+?>
 @section('content')
 <div class="container-fluid">
   <div class="d-flex justify-content-center position-relative">
@@ -17,7 +19,7 @@
 <div class="container-fluid mt-1">
   <div class="d-flex justify-content-center position-relative">
     <div class="mt-4 h1">お気に入りレシピ</div>
-    @if(isset($favo_recipes))
+    @if(!empty($favo_recipes[0]))
     <div class="align-self-cneter mt-4">
       <div class="d-flex flex-row-reverse">
         <a href="recipe_index?type=favorite" type="button"
@@ -25,10 +27,13 @@
       </div>
     </div>
     @else
-    <div class="text-center mt-3">お気に入りレシピはありません</div>
+</div>
+    <div class="text-center mt-3 h3">お気に入りレシピはありません</div>
+    <div>
     @endif
   </div>
 </div>
+@if(!empty($favo_recipes[0]))
 <div class="container-fluid px-0">
   <div class="d-flex flex-row flex-wrap">
     @foreach($favo_recipes as $favorite)
@@ -48,12 +53,13 @@
   </div>
   @endforeach
 </div>
+@endif
 
 <!-- 投稿レシピ -->
 <div class="container-fluid mt-1">
   <div class="d-flex justify-content-center position-relative">
     <div class="mt-4 h1">投稿レシピ</div>
-    @if(isset($post_recipes))
+    @if(!empty($post_recipes[0]))
     <div class="align-self-cneter mt-4">
       <div class="d-flex flex-row-reverse">
         <a href="recipe_index?type=posted" type="button"
@@ -61,7 +67,9 @@
       </div>
     </div>
     @else
-    <div class="text-center mt-3">お気に入りレシピはありません</div>
+</div>
+    <div class="text-center mt-3 h3">投稿レシピはありません</div>
+</div>
     @endif
   </div>
 </div>

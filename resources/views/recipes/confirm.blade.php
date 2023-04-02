@@ -1,11 +1,12 @@
 @extends('layouts.layout')
 
 @section('content')
+{{--投稿内容確認ページ--}}
+<div class="text-center h1 mt-4">{{ $title }}</div>
 <div class="container-fluid px-0">
   <img src="{{asset($image)}}" class="img-height-1" alt="NO IMAGE">
 </div>
 <div class="container-fluid">
-  <div class="text-center">{{ $title }}</div>
   <ul class="list-group">
     @foreach($food_arr as $food)
     <li class="list-group-item">

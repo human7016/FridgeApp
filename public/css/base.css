@@ -1,6 +1,13 @@
 html {
   font-size: 62.5%;
 }
+#guest-header{
+  z-index: 9999;
+}
+#auth-header{
+  z-index: 9999;
+}
+
 #screen{
   height: 100vh;
   width: 100vw;
@@ -14,7 +21,7 @@ html {
 #memo{  
   width: 80vw;
   height: calc(100vh - 20vw);
-  background-color:rgb(255, 255, 80);
+  background-color:#FCFBD1;
   top: 10vw;
   left: 10vw;
 
@@ -49,5 +56,5 @@ html {
   color: red;
 }
 .background-yellow{
-  background-color: yellow;
+  background-color: #FCDDD1;
 }

@@ -1,5 +1,5 @@
 <?php
-
+// 購入メモに関するコントローラ
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

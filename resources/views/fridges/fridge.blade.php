@@ -1,6 +1,7 @@
 @extends('layouts.layout')
-<?php // dd($fridges); ?>
+
 @section('content')
+{{--食材一覧ページ--}}
 @if($errors->has('food'))<div class="error" style="color:red;">{{ $errors->first('food') }}</div> @endif
 @if($errors->has('stock'))<div class="error" style="color:red;">{{ $errors->first('stock') }}</div> @endif
 @if($errors->has('expiry'))<div class="error" style="color:red;">{{ $errors->first('expiry') }}</div> @endif

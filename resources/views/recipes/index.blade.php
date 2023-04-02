@@ -13,7 +13,6 @@
   <div class="d-flex p-0 position-relative">
     <div class="col-6 border">
       <img class="img-fluid" src={{$recipe->image}}>
-      
     </div>
     <div class="col-6 text-wrap border text-12">
       <div>

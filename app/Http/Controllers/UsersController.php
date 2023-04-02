@@ -1,5 +1,5 @@
 <?php
-
+// ユーザに関するコントローラ
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -24,6 +24,9 @@ class UsersController extends Controller
             ->get();
         foreach($favorites as $favorite){
             $favo_recipes[] = Recipe::where('id', $favorite->recipe_id)->first();
+        }
+        if(empty($favorite)){
+            $favo_recipes[] = null;
         }
         return view('users/user', compact('user', 'post_recipes', 'favo_recipes'));
     }
