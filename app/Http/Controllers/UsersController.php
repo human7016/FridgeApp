@@ -31,22 +31,34 @@ class UsersController extends Controller
         return view('users/user', compact('user', 'post_recipes', 'favo_recipes'));
     }
 
+    public function get_favorite(Request $request){
+        $favorites = Favorite::where('user_id', $request['user_id'])
+        ->where('recipe_id', $request['recipe_id'])->exists();
+        //ヘッダーを指定するすることによりjsonの動作を安定させる
+        header('Content-type: application/json');
+        return json_encode($favorites);
+    }
+
     public function put_favorite(Request $request){
-        $user = Auth::user();
         $sql = array(
-            'user_id' => $user->id,
+            'user_id' => $request['user_id'],
             'recipe_id' => $request['recipe_id'],
         );
         $favorite = Favorite::create($sql);
-        return $favorite;
+
+        //ヘッダーを指定するすることによりjsonの動作を安定させる
+        header('Content-type: application/json');
+        echo json_encode($favorite);
     }
 
     public function delete_favorite(Request $request){
-        $user = Auth::user();
-        $favorite = Favorite::where('user_id', $user->id)
+        $favorite = Favorite::where('user_id', $request['user_id'])
             ->where('recipe_id', $request['recipe_id'])
             ->first();
         $favorite->delete();
-        return 'delete';
+
+        //ヘッダーを指定するすることによりjsonの動作を安定させる
+        header('Content-type: application/json');
+        echo json_encode($favorite);
     }
 }

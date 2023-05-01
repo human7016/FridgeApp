@@ -12,7 +12,7 @@ class Food extends Model
     protected $table = 'foods';
     protected $fillable = ['food'];
 
-    public function recipes(): BelongsToMany
+    public function recipes()
     {
         return $this->belongsToMany(Recipe::class);
     }

@@ -18,8 +18,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//testviews
 Route::get('/img', [ImagesController::class, 'index']);
 Route::post('/upload', [ImagesController::class,'upload']);
+Route::get('/map', function(){
+    return view('maps');
+});
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -64,6 +69,7 @@ Route::post('/recipe_delete', [RecipesController::class, 'delete']);
 Route::get('/user', [UsersController::class, 'userpage']);
 Route::post('/put_favorite', [UsersController::class, 'put_favorite']);
 Route::post('/delete_favorite', [UsersController::class, 'delete_favorite']);
+Route::post('/get_favorite',[UsersController::class, 'get_favorite']);
 
 Route::post('/memo_insert', [MemosController::class, 'insert']);
 Route::post('/memo_delete', [MemosController::class, 'delete']);
@@ -73,5 +79,7 @@ Route::post('/memo_checked', [MemosController::class, 'checked']);
 Route::post('/memo_purchase', [MemosController::class, 'purchase']);
 Route::post('/memo_fridge', [MemosController::class, 'fridge']);
 Route::post('/to_fridge', [MemosController::class, 'to_fridge']);
+
+
 
 require __DIR__.'/auth.php';
